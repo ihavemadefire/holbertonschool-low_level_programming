@@ -1,11 +1,11 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * Inserts a short string of text 
+ * Inserts a short string of text
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-puts("\"Programming is like building a multilingual puzzle");
-return (0);
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
 }

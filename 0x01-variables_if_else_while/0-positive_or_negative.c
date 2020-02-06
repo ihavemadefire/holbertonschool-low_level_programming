@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /* Function returns whether a rand num is positive or negative */
@@ -16,14 +17,15 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	if (n == 0)
 	{
-		printf("%n is zero\n", n)
+		printf("%d is zero\n", n);
 	}
 	else if (n > 0)
 	{
-		printf("%n is positive\n", n)
+		printf("%d is positive\n", n);
 	}
 	else
 	{
-		printf("%n is negative\n", n)
+		printf("%d is negative\n", n);
+	}
 	return (0);
 }

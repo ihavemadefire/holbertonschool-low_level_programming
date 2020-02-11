@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  * This file prints the end of the quote
- * Return: Always 0 (Success)
+ * Return: Always 1 (Success)
  */
 int main(void)
 {

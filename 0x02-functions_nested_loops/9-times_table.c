@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * void times_table(void) - returns the last digit
+ * times_table - returns the last digit
  *
  *
  *
@@ -15,12 +15,12 @@ void times_table(void)
 	for (i = 0; i <= 9; i++)
 	{
 		_putchar('0');
-		for(j = 1; j <= 9; j++)
+		for (j = 1; j <= 9; j++)
 		{
 			_putchar(',');
 			_putchar(' ');
 			k = j * i;
-			if((k/10) == 0)
+			if ((k / 10) == 0)
 			{
 				_putchar(' ');
 				_putchar(k + '0');

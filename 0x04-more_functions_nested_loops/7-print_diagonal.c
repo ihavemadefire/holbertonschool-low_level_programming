@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_line - is a function that prints numbers
+ * print_diagonal - is a function that prints numbers
  *
  *@n: is passed from main funtion
  */
@@ -15,7 +15,7 @@ void print_diagonal(int n)
 		_putchar(10);
 	else
 	{
-		for (r = 0; r<=n ; r++)
+		for (r = 0; r < n ; r++)
 		{
 			for (s = 0; s < r; s++)
 			{

@@ -4,7 +4,7 @@
  *
  *Return: always returns 0.
  **/
-void main(void)
+int main(void)
 {
 	int i;
 	long j = 1;
@@ -25,4 +25,5 @@ void main(void)
 			printf("%li\n", j);
 		}
 	}
+	return (0);
 }

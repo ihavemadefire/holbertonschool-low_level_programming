@@ -2,9 +2,9 @@
 /**
  *main -  prints natural numbers
  *
- *return: always returns 0.
+ *Return: always returns 0.
 **/
-int main (void)
+int main(void)
 {
 	int i;
 	int j;
@@ -14,6 +14,6 @@ int main (void)
 		if (i % 3 == 0 || i % 5 == 0)
 			j += i;
 	}
-	printf("%d\n",j);
+	printf("%d\n" , j);
 	return (0);
 }

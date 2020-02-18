@@ -4,7 +4,7 @@
  *               string
  * @s: Passed pointer
  *
- *
+ * Return: no return value
  */
 int string_length(char *s);
 void puts2(char *s)
@@ -13,7 +13,7 @@ void puts2(char *s)
 	int j;
 
 	j = string_length(s);
-	for (i = 0;i < j; i+=2)
+	for (i = 0; i < j; i += 2)
 		_putchar(*(s + i));
 	_putchar(10);
 }
@@ -26,9 +26,9 @@ void puts2(char *s)
  */
 int string_length(char *s)
 {
-        int c = 0;
+	int c = 0;
 
-        while (*(s + c) != '\0')
-                c++;
-        return (c);
+	while (*(s + c) != '\0')
+		c++;
+	return (c);
 }

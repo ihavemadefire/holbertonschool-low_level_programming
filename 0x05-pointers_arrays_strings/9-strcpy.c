@@ -1,11 +1,12 @@
 #include "holberton.h"
 /**
- * *strcpy - function that reverses a string
+ * *_strcpy - function that reverses a string
  *
- * @dest: Pointer to destination
- * @src: source from which
+ * @s: Passed pointer
+ * dest: Pointer to destination
+ * src: source from which
  *
- * Return: Reutns lenth of passed pointer
+ * Return: Returns lenth of passed pointer
  */
 int string_length(char *s);
 char *_strcpy(char *dest, char *src)

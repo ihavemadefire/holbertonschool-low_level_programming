@@ -34,5 +34,5 @@ int string_length(char *s)
 
 	while (*(s + c) != '\0')
 		c++;
-	return (c);
+	return (c + 1);
 }

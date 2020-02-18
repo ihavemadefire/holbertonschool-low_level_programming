@@ -2,8 +2,6 @@
 /**
  * rev_string - function that reverses a string
  *
- * string_length - length of string
- *
  * @s: Passed pointer
  *
  * Return: Reutns lenth of passed pointer
@@ -30,6 +28,13 @@ void rev_string(char *s)
 		end--;
 	}
 }
+/**
+ * string_length - returns length of string
+ *
+ * @s: Passed pointer
+ *
+ * Return: returns length of string
+ */
 int string_length(char *s)
 {
 	int c = 0;

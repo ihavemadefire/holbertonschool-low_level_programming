@@ -10,12 +10,12 @@
 int isNumericChar(char x);
 int _atoi(char *s)
 {
-	if (*s == '\0')
-		return (0);
-
 	int result = 0;
 	int sign = 1;
 	int i = 0;
+
+	if (*s == '\0')
+		return (0);
 
 	while (isNumericChar(*s) == 0)
 		s++;

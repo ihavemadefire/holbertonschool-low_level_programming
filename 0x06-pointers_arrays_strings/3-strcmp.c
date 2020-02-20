@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
- *_strncpy - returns a concatednated char pointer
- *@dest: destination to be concatenated to
- *@src: to be cated
- *@n: max number of bytes from src
+ *_strcmp - returns a concatednated char pointer
+ *@s1: passed pointer to be compared
+ *@s2: passed pointer to be compared
+ *
  *
  *Return: copied string
  */

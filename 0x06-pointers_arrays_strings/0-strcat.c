@@ -1,4 +1,11 @@
 #include "holberton.h"
+/**
+ *_strcat - returns a concatednated char pointer
+ *@dest: destination to be concatenated to
+ *@src: to be cated
+ *
+ *Return: conceatenated string
+ */
 
 char *_strcat(char *dest, char *src)
 {
@@ -11,5 +18,5 @@ char *_strcat(char *dest, char *src)
 		*(dest + i) = src[j];
 	i++;
 	*(dest + i) = '\0';
-	return(dest);
+	return (dest);
 }

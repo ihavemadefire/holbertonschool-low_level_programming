@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * cap_string - returns a concatednated char pointer
+ * leet - returns a concatednated char pointer
  *@s: passed pointer to be compared
  *
  *

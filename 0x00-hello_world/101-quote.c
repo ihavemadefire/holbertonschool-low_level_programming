@@ -5,8 +5,8 @@
  */
 int main(void)
 {
-	char q[60] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
-	(write(2, q, 60));
-
-	return (1);
+int i;
+i = 59;
+(write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", i));
+return (1);
 }

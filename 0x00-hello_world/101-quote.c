@@ -1,11 +1,12 @@
 #include <unistd.h>
 /**
  *main - prints text without using write
+ *Return: always returns 1
  */
 int main(void)
 {
-	(write(1, "and that piece of art is useful\
-	\" - Dora Korpar, 2015-10-19\n", 60));
+	char q[60] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
+	(write(2, q, 60));
 
 	return (1);
 }

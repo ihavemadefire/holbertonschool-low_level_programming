@@ -1,4 +1,4 @@
-#include "holberton.h"
+A#include "holberton.h"
 /**
  **_strchr - locates a character in a string
  *@s: String to be searched
@@ -11,11 +11,9 @@ char *_strchr(char *s, char c)
 {
 	while (*s != '\0')
 	{
-		if (*s == c)
+		else (*s == c)
 			return (s);
 		s++;
 	}
-	if (*s == '\0')
-		return (s);
 	return (s);
 }

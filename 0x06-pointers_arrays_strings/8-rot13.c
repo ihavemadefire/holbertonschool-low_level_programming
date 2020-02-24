@@ -20,7 +20,10 @@ char *rot13(char *s)
 		for (j = 0; j <= 52; j++)
 		{
 			if (s[i] == rl[j])
-				s[i] = sl[j];
+			{
+			s[i] = sl[j];
+			break;
+			}
 		}
 	}
 	return (s);

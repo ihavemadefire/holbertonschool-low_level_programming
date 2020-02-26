@@ -1,3 +1,4 @@
+
 #include "holberton.h"
 /**
  *_puts_recursion - Simulates puts using recursion
@@ -10,7 +11,7 @@ void _puts_recursion(char *s)
 	if (*s != '\0')
 	{
 		_putchar(s[i]);
-		_puts_recursion(s+1);
+		_puts_recursion(s + 1);
 	}
 	else
 		_putchar(10);

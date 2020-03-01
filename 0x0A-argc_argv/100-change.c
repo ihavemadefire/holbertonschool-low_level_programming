@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	if (change < 0)
 	{
 		printf("0\n");
-		return (1);
+		return (0);
 	}
 	q = (change / 25);
 	change = (change % 25);

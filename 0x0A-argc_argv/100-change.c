@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 	if (change < 0)
 	{
 		printf("0\n");
+		return (1);
 	}
 	q = (change / 25);
 	change = (change % 25);
@@ -37,6 +38,6 @@ int main(int argc, char *argv[])
 	change = (change % 2);
 	p = change;
 	sum = (q + d + n + h + p);
-	printf ("%d\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }

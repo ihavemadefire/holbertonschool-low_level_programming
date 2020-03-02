@@ -10,17 +10,20 @@
 
 int main(int argc, char *argv[])
 {
-	int q, d, n, h, p, sum, change;
+	int i, q, d, n, h, p, sum, change;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (!(atoi(argv[1])))
+	for (i = 0; argv[1][i] ; i++)
 	{
-		printf("Error\n");
-		return (1);
+		if (!(isdigit(argv[1][i])))
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
 	change = (atoi(argv[1]));
 	if (change < 0)

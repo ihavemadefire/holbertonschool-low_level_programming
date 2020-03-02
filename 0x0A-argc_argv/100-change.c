@@ -17,7 +17,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 0; argv[1][i] ; i++)
+	if (atoi(argv[1]) < 0)
+	{
+		printf("0\n");
+			return (1);
+	}
+	for (i = 0; argv[1][i] != '\0' ; i++)
 	{
 		if (!(isdigit(argv[1][i])))
 		{
@@ -26,11 +31,6 @@ int main(int argc, char *argv[])
 		}
 	}
 	change = (atoi(argv[1]));
-	if (change < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
 	q = (change / 25);
 	change = (change % 25);
 	d = (change / 10);

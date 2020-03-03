@@ -2,15 +2,18 @@
 #include "holberton.h"
 
 /**
- * _strdup(char *str) - Copies string into allocated mem
- *@size: Size of string to be allocated
+ * _strdup - Copies string into allocated mem
+ *@str: Pointer to string to be copied
  *
- *Return: pointer to allocated array
+ *Return: pointer to copied string
  */
 char *_strdup(char *str)
 {
 	char *ch;
 	int i, j;
+
+	if (str == NULL)
+		return (NULL);
 
 	for (j = 0; str[j] != '\0' ; j++)
 	{

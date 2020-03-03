@@ -23,7 +23,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < j; ++i)
+	for (i = 0; i < j; i++)
 		ch[i] = str[i];
 	ch[i] = '\0';
 	return (ch);

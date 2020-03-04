@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * *argstostr - convert arguments on command line to strings
+ * *argstostr - convert command line text args to strings
  * @ac: passed from main
  * @av: pointer to array of passed strings
  * Return: arguments as line separated strings
@@ -17,7 +17,6 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);   /*check for 0 args*/
-		                 /*and for a null ptr */
 	}
 	for (x = 0; x < ac; x++)
 	{
@@ -25,6 +24,7 @@ char *argstostr(int ac, char **av)
 		{/*length of each string*/
 			length++;
 		}
+		length++;
 	}
 	length++;/*one for the final char*/
 

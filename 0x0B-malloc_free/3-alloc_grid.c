@@ -31,7 +31,7 @@ int **alloc_grid(int width, int height)
 			for (y = 0; y < x;  y++)/* free the rows      */
 				free(ptr[y]);   /*you already alloced */
 			free(ptr);/*free columnless pointer*/
-			return (NULL)
+			return (NULL);
 		}
 		for (y = 0; y < width; y++)
 		{

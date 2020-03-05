@@ -39,8 +39,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < sizeOf1; i++) /* copy string one to ch pointer*/
 		ch[i] = s1[i];
 	for (j = 0; j < k; j++)/* copy string to to end of ch */
-		ch[sizeOf1 + j] = s2[j];
-	ch[sizeOf1 + sizeOf2] = '\0';
+		ch[i++] = s2[j];
+	ch[i++] = '\0';
 	return (ch);
 }
 /**

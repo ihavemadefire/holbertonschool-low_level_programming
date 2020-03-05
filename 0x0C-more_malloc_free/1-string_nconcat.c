@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
- * str_nconcat - Copies string into allocated mem
+ * string_nconcat - Copies string into allocated mem
  *s1: Pointer to string to be appended to
  *s2: Pointer to sting to be appended.
  *@s: String to be measured
@@ -28,8 +28,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	for (i = 0; s1[i]; i++) /* copy string one to ch pointer*/
 		ch[i] = s1[i];
-	for (i = 0; i < n ; i++)/* copy string to to end of ch */
-		ch[sizeOf1 + i] = s2[i];
+	if (sizeOf2 >= n)
+	{
+		for (i = 0; s2[i]; i++)/* copy string to to end of ch */
+			ch[sizeOf1 + i] = s2[i];
+	}
+	else
+	{
+		for (i = 0; i < n ; i++)/* copy string to to end of ch */
+			ch[sizeOf1 + i] = s2[i];
+	}
 	ch[sizeOf1 + sizeOf2] = '\0';
 	return (ch);
 }

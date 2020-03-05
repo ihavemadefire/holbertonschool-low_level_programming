@@ -36,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
-	for (i = 0; s1[i]; i++) /* copy string one to ch pointer*/
+	for (i = 0; i < sizeOf1; i++) /* copy string one to ch pointer*/
 		ch[i] = s1[i];
 	for (j = 0; j < k; j++)/* copy string to to end of ch */
 		ch[sizeOf1 + j] = s2[j];

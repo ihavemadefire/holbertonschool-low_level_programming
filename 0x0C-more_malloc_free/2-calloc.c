@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /**
- * calloc - function to allocate and initialize array
- * @nmeb: number of elements
+ * _calloc - function to allocate and initialize array
+ * @nmemb: number of elements
  * @size: size of each element to be alloced
  * Return: array init'd to 0
  */
@@ -20,8 +20,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == NULL)/*check for alloc fail */
 		return (NULL);
 	for (i = 0; i < (nmemb * size); i++)
-		{/*init each element to 0*/
-			ptr[i] = 0;
-		}
+	{/*init each element to 0*/
+		ptr[i] = 0;
+	}
 	return (ptr);
 }

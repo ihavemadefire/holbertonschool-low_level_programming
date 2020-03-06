@@ -4,23 +4,23 @@
 #include <string.h>
 
 /**
- * *array_range - alloc memory for an array
+ * *_realloc - alloc prev. alloced memory
  * @ptr: prev. alloced memory
- * @min: min int
- * @max: max int
- * Return:  return pointer to array of ints
+ * @old_size: size of prev alloced space
+ * @new_size: size of new alloc
+ * Return:  return pointer to new alloc
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *str;
 
-        if (ptr == NULL)
-        {
-                str = malloc(new_size);
-                free(ptr);
-                return (str);
-        }
+	if (ptr == NULL)
+	{
+		str = malloc(new_size);
+		free(ptr);
+		return (str);
+	}
 	if (new_size > old_size)
 	{
 		str = malloc(new_size);

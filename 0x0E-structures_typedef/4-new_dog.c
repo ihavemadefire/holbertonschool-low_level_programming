@@ -37,15 +37,18 @@ char *_strcpy(char *dest, char *src)
 }
 /**
  * *new_dog - function to create new dog struct
- * @name: char type
- * @age: float type
- * @owner: char type
- * Return: Always success
+ * @name: name
+ * @age: age
+ * @owner: owner
+ * Return: Always 0
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *nd;
+
+	if (name == NULL || owner == NULL)
+		return (NULL);
 
 	nd = malloc(sizeof(struct dog));
 	if (nd == NULL)

@@ -2,10 +2,11 @@
 #include "function_pointers.h"
 
 /**
- *
- *
- *
- *
+ * int_index - iterates over arran applys a func
+ * @array: array to be searched
+ * @size: size of array
+ * @cmp: comparison functions
+ * Return: index of find
  **/
 
 int int_index(int *array, int size, int (*cmp)(int))

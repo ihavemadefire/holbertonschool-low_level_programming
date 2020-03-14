@@ -31,6 +31,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s%s", separator, va_arg(va_print, char *));
 		}
 	}
-	printf("\n");
 	va_end(va_print);
+	printf("\n");
 }

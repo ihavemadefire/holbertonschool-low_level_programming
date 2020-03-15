@@ -71,7 +71,6 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 		};
 
-	printf("start");
 	va_start(arg, format);
 
 	i = 0;
@@ -79,12 +78,12 @@ void print_all(const char * const format, ...)
 	while (format && format[i])/*iterate across format*/
 	{
 		j = 0;
-		while (type_dict[j].type != NULL);
+		while (type_dict[j].type != NULL)
 		{
 			if (format[i] == type_dict[j].type[0])
 			{
 				printf("%s", delim);
-				type_dict[j].p_to_func(va_arg(arg, char *));
+				type_dict[j].p_to_func(arg);
 				delim = ", ";
 			}
 			j++;

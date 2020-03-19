@@ -9,12 +9,10 @@ message:		db 'Hello, Holberton', 0x0A ; message with new line
 
 main:
 
-	mov	edx, 17         ; carve out enough memory for message
-	mov 	ecx, message    ; assign message to memory register
-	mov	ebx, 1		; mov from register to stdout
-	mov 	eax, 4		; stdout
-	int 	0x80		; interrupt call
-
-	mov 	ebx, 0		; exit code
-	xor 	eax, 1		; output to kernel
-	int 	0x80
+        pushq   %rbp
+	movq    %rsp, %rbp
+	movl    $.LC0, %edi
+	call    puts
+	movl    $0, %eax
+	popq    %rbp
+	ret

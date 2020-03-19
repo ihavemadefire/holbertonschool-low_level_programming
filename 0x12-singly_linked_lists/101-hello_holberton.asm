@@ -1,18 +1,16 @@
-;;;    Code to output a line to STDOUT
-;;;    output is:	Hello Holberton, followed by a new line
+;; -----------------------------------------------------------------------------------------
+;;  Writes "Hola, mundo" to the console using a C library. Runs on Linux.
+;;
+;;      nasm -felf64 hola.asm && gcc hola.o && ./a.out
+;;  ----------------------------------------------------------------------------------------
 
-	section .data 		; data section
-message:		db 'Hello, Holberton', 0x0A ; message with new line
+	          global    main
+	          extern    puts
 
-	section .text		; code section
-	global main
-
-main:
-
-        pushq   %rbp
-	movq    %rsp, %rbp
-	movl    $.LC0, %edi
-	call    puts
-	movl    $0, %eax
-	popq    %rbp
-	ret
+	          section   .text
+main:				; This is called by the C library startup code
+	          mov       rdi, message ; First integer (or pointer) argument in rdi
+	          call      puts	 ; puts(message)
+	          ret			 ; Return from main back into C library wrapper
+message:
+	          db        "Hello, Holberton", 0 ; Note strings must be terminated with 0 in C

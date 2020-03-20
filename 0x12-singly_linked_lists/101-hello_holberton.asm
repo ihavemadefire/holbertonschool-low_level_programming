@@ -3,6 +3,8 @@
 ;;
 ;;
 ;;  ----------------------------------------------------------------------------
+segment .data
+hello db "Hello, Holberton", 0xa, 0
 
 segment .text
 	global	main
@@ -13,6 +15,3 @@ main:
 	mov	rdi, hello
 	call	printf
 	call	exit
-
-segment .data
-hello db "Hello, Holberton", 0xa, 0

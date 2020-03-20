@@ -4,15 +4,15 @@
 ;;
 ;;  ----------------------------------------------------------------------------
 
-	global    main
-	extern    printf
-	extern    exit
-
-	section   .text
+section .text
+	global	main
+	extern	printf
+	extern	exit
 main:
-	mov       rax, 0
-	mov       rdi, hello
-	call      printf
-	call      exit
-message:
-hello db "Hello, Holberton", 0xa, 0
+	mov	rax, 0
+	mov	rdi, hello
+	call	printf
+	call	exit
+
+section .data
+	message: hello db "Hello, Holberton", 0xa, 0

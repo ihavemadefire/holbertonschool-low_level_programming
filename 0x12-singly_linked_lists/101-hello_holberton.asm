@@ -4,7 +4,7 @@
 ;;
 ;;  ----------------------------------------------------------------------------
 
-section .text
+segment .text
 	global	main
 	extern	printf
 	extern	exit
@@ -14,5 +14,5 @@ main:
 	call	printf
 	call	exit
 
-section .data
-	message: hello db "Hello, Holberton", 0xa, 0
+segment .data
+hello db "Hello, Holberton", 0xa, 0

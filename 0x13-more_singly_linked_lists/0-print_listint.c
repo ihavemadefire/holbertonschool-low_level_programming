@@ -11,6 +11,9 @@ size_t print_listint(const listint_t *h)
 	const listint_t *current = h;
 	int i = 0;
 
+	if (h == NULL)
+		printf("(nil)");
+
 	while (current != NULL)
 	{
 		printf("%d\n", current->n);

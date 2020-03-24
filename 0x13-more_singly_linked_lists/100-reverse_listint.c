@@ -14,8 +14,10 @@ listint_t *reverse_listint(listint_t **head)
 	if (head == NULL)
 		return (NULL);
 
+	current = *head;
 	while (current != NULL)
 	{
+		current = current->next;/*if current is the only value, exit*/
 		current = (*head)->next;
 		(*head)->next = end;
 		end = *head;

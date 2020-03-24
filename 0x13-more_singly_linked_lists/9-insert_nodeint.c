@@ -20,13 +20,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new = malloc(sizeof(listint_t));/*malloc new*/
 	if (new == NULL)/*validcate the malloc*/
 		return (NULL);
-	tmp = *head;
 	new->n = n;
 	new->next = NULL;
+	tmp = *head;
 	if (tmp == NULL)/*if the list is empty, make it THE list*/
 	{
+		*head = new;
 		new->next = NULL;
-		*head = tmp;
 		return (new);
 	}
 	if (idx == 0)

@@ -6,12 +6,12 @@
 #include "holberton.h"
 
 /**
- * create_file - appends text to end of existing file
+ * append_text_to_file - appends text to end of existing file
  * @filename: file to be created or opened
  * @text_content: text to be written
  * Return: 1 on success, -1 on failure
  */
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int o, w, len;
 

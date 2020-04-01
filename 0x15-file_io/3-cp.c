@@ -70,23 +70,26 @@ int main(int argc, char *argv[])
 	src = open(argv[1], O_RDONLY);/*Open src file*/
 	r = read(src, buf, 1024);/*Read and copy into buffer*/
 	dst = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);/*Open dst fil*/
-	if (src == -1 || r == -1)
-	{/*If open or read fails, return  exit 98*/
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
-			argv[1]);
-		free(buf);
-		exit(98);
-	}
-	w = write(dst, buf, r);
-	if (dst == -1 || w == -1)
+	while (r > 0)/*Loop until src is copied*/
 	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", argv[2]);
-		free(buf);
-		exit(99);
+		if (src == -1 || r == -1)
+		{/*If open or read fails, return  exit 98*/
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]);
+			free(buf);
+			exit(98);
+		}
+		w = write(dst, buf, r); /*if write fails, exit 99*/
+		if (dst == -1 || w == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
+			free(buf);
+			exit(99);
+		}
+		r = read(src, buf, 1024);
+		dst = open(argv[2], O_WRONLY | O_APPEND);
 	}
-	r = read(src, buf, 1024);
-	dst = open(argv[2], O_WRONLY | O_APPEND);
 
 	free(buf);
 	close_file(src);

@@ -70,8 +70,8 @@ int main(int argc, char *argv[])
 	src = open(argv[1], O_RDONLY);/*Open src file*/
 	r = read(src, buf, 1024);/*Read and copy into buffer*/
 	dst = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);/*Open dst fil*/
-	while (r > 0)/*Loop until src is copied*/
-	{
+	/*Loop until src is copied*/
+	do {
 		if (src == -1 || r == -1)
 		{/*If open or read fails, return  exit 98*/
 			dprintf(STDERR_FILENO,
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 		}
 		r = read(src, buf, 1024);
 		dst = open(argv[2], O_WRONLY | O_APPEND);
-	}
+	} while (r > 0);
 
 	free(buf);
 	close_file(src);

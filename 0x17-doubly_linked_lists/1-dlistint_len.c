@@ -8,7 +8,7 @@
 
 size_t dlistint_len(const dlistint_t *h)
 {
-	const dlistint_t *current = rewnd(h);
+	const dlistint_t *current = h;
 	size_t length = 0;
 
 	while (current != NULL)
@@ -18,20 +18,4 @@ size_t dlistint_len(const dlistint_t *h)
 
 	}
 	return (length);
-}
-/**
- * rewnd - rewinds to head of list
- * @h: address of list of elements
- * Return: pointer to head of list
- */
-
-const dlistint_t *rewnd(const dlistint_t *h)
-{
-	const dlistint_t *temp = h;
-
-	while (temp->prev != NULL)
-	{
-		temp = temp->prev;
-	}
-	return (temp);
 }

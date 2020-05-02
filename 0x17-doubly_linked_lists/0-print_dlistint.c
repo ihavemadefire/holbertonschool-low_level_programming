@@ -8,8 +8,8 @@
 
 size_t print_dlistint(const dlistint_t *h)
 {
-	const dlistint_t *current = rewnd(h);
 	size_t length = 0;
+	const dlistint_t *current = h;
 
 	while (current != NULL)
 	{
@@ -19,20 +19,4 @@ size_t print_dlistint(const dlistint_t *h)
 
 	}
 	return (length);
-}
-/**
- * rewnd - Prints all the elements of a list
- * @h: address of list of elements
- * Return: pointer to head
- */
-
-const dlistint_t *rewnd(const dlistint_t *h)
-{
-	const dlistint_t *temp = h;
-
-	while (temp->prev != NULL)
-	{
-		temp = temp->prev;
-	}
-	return (temp);
 }

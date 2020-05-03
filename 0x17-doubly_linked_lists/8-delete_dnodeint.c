@@ -1,4 +1,4 @@
-#include "lists.h"
+B#include "lists.h"
 
 /**
  * delete_dnodeint_at_index - deletes value at a given index
@@ -11,7 +11,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *tmp;
 	dlistint_t *tmp1 = NULL;
-	unsigned int i = 0;
+	unsigned int i;
 
 	if (head == NULL || *head  == NULL)/*Check for NULL input to function*/
 		return (-1);
@@ -30,6 +30,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		if (tmp == NULL)
 			return (-1);
 		tmp = tmp->next;
+	}
+	if (tmp->next->next == NULL)
+	{
+		tmp1 = tmp->next;
+		free(tmp1);
+		tmp->next = NULL;
+		return (1);
 	}
 	tmp1 = tmp->next->next;
 	tmp->next = tmp1;

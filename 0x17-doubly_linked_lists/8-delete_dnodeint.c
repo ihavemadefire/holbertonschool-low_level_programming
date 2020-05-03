@@ -13,13 +13,9 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *tmp1 = NULL;
 	unsigned int i = 0;
 
-	if (head == NULL)/*Check for NULL input to function*/
+	if (head == NULL || *head  == NULL)/*Check for NULL input to function*/
 		return (-1);
 	tmp = *head;
-	if (tmp == NULL)
-	{
-		return (-1);
-	}
 	if (index == 0)/*check for 0 index*/
 	{
 		*head = tmp->next;

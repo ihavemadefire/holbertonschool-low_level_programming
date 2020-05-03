@@ -23,20 +23,23 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (index == 0)/*check for 0 index*/
 	{
 		*head = tmp->next;
-		tmp->prev = NULL;
+		/*check for list of one*/
+		if (tmp->next != NULL)
+			tmp->next->prev = NULL;
 		free(tmp);
 		return (1);
 	}
 	for (i = 0; i < (index - 1); i++)
 	{
-		tmp = tmp->next;
 		if (tmp == NULL)
 			return (-1);
+		tmp = tmp->next;
 	}
-	tmp1 = tmp->next;
-	tmp = tmp->prev;
+	tmp1 = tmp->next->next;
 	tmp->next = tmp1;
-	tmp1->prev = tmp;
-	free(tmp);
+	if (tmp->next->next != NULL)
+		tmp->next->next->prev = tmp;
+	free(tmp->next);
+	tmp->next = tmp1;
 	return (1);
 }

@@ -1,4 +1,4 @@
-#include "lists.h"
+BB#include "lists.h"
 
 /**
  * insert_dnodeint_at_index - Gets node at given index
@@ -17,12 +17,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
-	if (*h == NULL || idx == 0)
+	if (*h == NULL)
 	{
 		new->prev = NULL;
 		new->next = NULL;
 		*h = new;
 		return (new);
+	}
+	if (idx == 0)
+	{
+		return (add_dnodeint(h, n));
 	}
 	temp = *h;
 	while (i < idx - 1)

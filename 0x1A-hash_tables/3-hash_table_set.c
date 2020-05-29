@@ -11,19 +11,25 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *new;
+	char *dupkey;
+	char *dupvalue;
+
+	dupkey = (char *)strdup(key);
+	dupvalue = (char *)strdup(value);
+
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index]->key == NULL)
 	{
 		/*for an empty block*/
-		ht->array[index]->key = (void *)key;
-		ht->array[index]->value = (void *)value;
+		ht->array[index]->key = dupkey;
+		ht->array[index]->value = dupvalue;
 		ht->array[index]->next = NULL;
 		return (0);
 	}
 	else if (strcmp(ht->array[index]->key, key))
 	{
 		/*For an update*/
-		ht->array[index]->value = (void *)value;
+		ht->array[index]->value = dupvalue;
 		return (0);
 	}
 	/*Check for replace downlist*/
@@ -35,8 +41,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			return (-1);
 		}
-		new->value = (void *)value;
-		new->key = (void *)key;
+		new->value = dupvalue;
+		new->key = dupkey;
 		new->next = ht->array[index];
 		return (0);
 	}

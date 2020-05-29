@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_table_set -
+ * hash_table_set - Sets hash table
  * @ht: table to be set
  * @key: key
  * @value: value
@@ -10,12 +10,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *new;
-	char *dupkey;
-	char *dupvalue;
+	char *dupkey, *dupvalue;
 
 	dupkey = (char *)strdup(key);
 	dupvalue = (char *)strdup(value);
-
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL)
 	{
@@ -37,8 +35,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index]->value = dupvalue;
 		return (0);
 	}
-	/*Check for replace downlist*/
-	/*Make new node down list*/
 	else
 	{
 		new = malloc(sizeof(hash_node_t));

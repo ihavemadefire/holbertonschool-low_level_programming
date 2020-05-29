@@ -38,12 +38,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			temp = temp->next;
 		}
+		temp = ht->array[index];
 		new = malloc(sizeof(hash_node_t));
 		if (new == NULL)
 			return (1);
 		new->value = dupvalue;
 		new->key = dupkey;
-		new->next = ht->array[index];
+		new->next = temp;
+		ht->array[index] = new;
 		return (0);
 	}
 }

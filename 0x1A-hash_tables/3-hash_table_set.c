@@ -10,20 +10,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	hash_node_t *new, *temp;
-	char *dupkey = (char *)strdup(key);
-	char *dupvalue = (char *)strdup(value);
+	char *dupkey, *dupvalue;
 
+	if (key == NULL)
+		return (0);
+	dupkey = (char *)strdup(key);
+	dupvalue = (char *)strdup(value);
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL)
 	{
-		/*for an empty block*/
 		new = malloc(sizeof(hash_node_t));
 		if (new == NULL)
 			return (0);
 		ht->array[index] = new;
-		new->key = dupkey;
-		new->value = dupvalue;
-		new->next = NULL;
+		fill_first(new, dupkey, dupvalue);
 		return (1);
 	}
 	else
@@ -48,4 +48,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new;
 		return (1);
 	}
+}
+/**
+ * fill_first - fills first to workaround betty
+ * @new: Node
+ * @dupkey: key
+ * @dupvalue: value
+ */
+void fill_first(hash_node_t *new, char *dupkey, char *dupvalue)
+{
+	new->key = dupkey;
+	new->value = dupvalue;
+	new->next = NULL;
 }

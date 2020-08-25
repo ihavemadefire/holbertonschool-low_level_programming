@@ -9,10 +9,11 @@
  * @value: value to be searched for
  * Return: index of value @ location or -1 on failure
  */
-int linear_search (int *array, size_t size, int value)
+int linear_search(int *array, size_t size, int value)
 {
 	int size1 = size;
 	int i;
+
 	for (i = 0 ; i < size1 ; i++)
 	{
 		printf("Value checked array[%d] = [%d]\n", i, array[i]);
